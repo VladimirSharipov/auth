@@ -1,0 +1,4 @@
+main
+coverage.out
+.env
+.env.docker
