@@ -1,3 +1,4 @@
+```markdown
 # 🔐 Auth Service
 
 Микросервис аутентификации на Go с JWT токенами, PostgreSQL и Docker поддержкой.
@@ -23,7 +24,7 @@
 ## 📦 Установка
 
 ### Локальная разработка
-`bash
+```bash
 # Клонирование репозитория
 git clone https://github.com/VladimirSharipov/auth.git
 cd auth
@@ -40,45 +41,46 @@ make mig_up
 
 # Запуск приложения
 make run
-``
+```
 
 ### Docker развертывание
-bash
+```bash
 # Сборка и запуск
 make docker_up
 
 # Остановка
 make docker_down
-``
+```
 
 ## 🔌 API Эндпоинты
 
 ### GET /access
 Получение новой пары токенов
-``bash
+```bash
 curl "http://localhost:8080/access?guid=550e8400-e29b-41d4-a716-446655440000"
-
+```
 
 ### POST /refresh
 Обновление токенов
-``bash
+```bash
 curl -X POST http://localhost:8080/refresh \
   -H "Content-Type: application/json" \
   -d '{"refresh_token": "base64_encoded_token"}'
-``
+```
 
 ## 🧪 Тестирование
 
-`bash
+```bash
 # Локальные тесты с покрытием
 make test_coverage
 
 # Docker тесты
 make docker_test
-`
+```
 
 ## 📁 Структура проекта
 
+```
 auth/
 ├── cmd/auth/           # Точка входа приложения
 ├── internal/
@@ -91,12 +93,12 @@ auth/
 ├── docker-compose.yml # Docker конфигурация
 ├── Dockerfile         # Docker образ
 └── Makefile          # Команды сборки
-``
+```
 
 ## ⚙️ Конфигурация
 
 Создайте `.env` файл:
-`env
+```env
 DB_USER=postgres
 DB_PASSWORD=mypass
 DB_HOST=localhost
@@ -104,7 +106,7 @@ DB_PORT=5432
 DB_NAME=auth_db
 OWN_KEY=your-secret-key
 TOKEN_TTL=24h
-
+```
 
 ## 🤝 Участие в разработке
 
@@ -117,3 +119,5 @@ TOKEN_TTL=24h
 ## 📄 Лицензия
 
 MIT License
+```
+
